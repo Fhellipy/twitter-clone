@@ -22,6 +22,14 @@ export const SearchWrapper = styled.div`
   background: var(--primary);
 
   max-height: 57px;
+
+  @media (min-width: 1000px) {
+    width: min(375px, 100%);
+  }
+
+  @media (min-width: 1050px) {
+    width: min(399px, 100%);
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -34,7 +42,6 @@ export const SearchInput = styled.input`
 
   &::placeholder {
     color: var(--gray);
-    
   }
   ~ svg {
     position: relative;
@@ -68,8 +75,8 @@ export const Body = styled.div`
   flex-direction: column;
   padding: 57px 24px 200px;
   margin-top: 3px;
-  
-  > div + div{
+
+  > div + div {
     margin-top: 15px;
   }
 `;
