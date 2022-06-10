@@ -1,8 +1,12 @@
 import styled, { css } from 'styled-components';
+
 import {
+  LogoTwitter,
   Home,
   Notifications,
   Email,
+  Search,
+  Hash,
   FavoriteBorder,
   Person,
   ExitToApp,
@@ -25,6 +29,10 @@ export const Container = styled.div`
     max-height: 100vh;
     overflow-y: auto;
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const TopSide = styled.div`
@@ -37,14 +45,12 @@ export const TopSide = styled.div`
   }
 `;
 
-export const Logo = styled.div`
-  > img {
-    width: 41px;
-    height: 41px;
+export const Logo = styled(LogoTwitter)`
+  width: 36px;
+  height: 36px;
 
-    margin-bottom: 20px;
-    border-radius: 5px;
-  }
+  margin-bottom: 20px;
+  border-radius: 5px;
 `;
 
 export const MenuButton = styled.button`
@@ -125,6 +131,23 @@ export const HomeIcon = styled(Home)`
   ${iconCSS}
 `;
 
+export const SearchIcon = styled(Search)`
+  ${iconCSS}
+
+  @media (min-width: 1000px) {
+    display: none;
+  }
+`;
+
+export const HashIcon = styled(Hash)`
+  ${iconCSS}
+
+  @media (max-width: 999px) {
+    display: none;
+  }
+`;
+
+
 export const BellIcon = styled(Notifications)`
   ${iconCSS}
 `;
@@ -186,7 +209,7 @@ export const ExitIcon = styled(ExitToApp)`
     margin-left: 30px;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       > path {
         color: var(--like);
       }

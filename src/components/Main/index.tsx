@@ -24,10 +24,6 @@ function Main() {
           <strong>_Fhellipy</strong>
           <span>32 Tweets</span>
         </ProfileInfo>
-
-        <button>
-          <SearchIcon />
-        </button>
       </Header>
 
       <ProfilePage />

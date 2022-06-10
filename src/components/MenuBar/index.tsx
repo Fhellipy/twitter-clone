@@ -7,6 +7,8 @@ import {
   Logo,
   MenuButton,
   HomeIcon,
+  SearchIcon,
+  HashIcon,
   BellIcon,
   EmailIcon,
   FavoriteIcon,
@@ -14,20 +16,24 @@ import {
   BotSide,
   Avatar,
   ProfileData,
-  ExitIcon
+  ExitIcon,
 } from './styles';
 
 function MenuBar() {
   return (
     <Container>
       <TopSide>
-        <Logo>
-          <img src={LogoImg} alt="" />
-        </Logo>
+        <Logo />
 
         <MenuButton>
           <HomeIcon />
           <span>Home Page</span>
+        </MenuButton>
+
+        <MenuButton>
+          <SearchIcon />
+          <HashIcon />
+          <span>Explore</span>
         </MenuButton>
 
         <MenuButton>
