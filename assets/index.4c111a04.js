@@ -748,6 +748,14 @@ padding: 6px 17px;
   background: var(--primary);
 
   max-height: 57px;
+
+  @media (min-width: 1000px) {
+    width: min(375px, 100%);
+  }
+
+  @media (min-width: 1050px) {
+    width: min(399px, 100%);
+  }
 `,Hm=N.input`
   width: 100%;
   height: 39px;
@@ -758,7 +766,6 @@ padding: 6px 17px;
 
   &::placeholder {
     color: var(--gray);
-    
   }
   ~ svg {
     position: relative;
@@ -788,8 +795,8 @@ padding: 6px 17px;
   flex-direction: column;
   padding: 57px 24px 200px;
   margin-top: 3px;
-  
-  > div + div{
+
+  > div + div {
     margin-top: 15px;
   }
 `;function Qm(){return B(Vm,{children:[B(Bm,{children:[w(Hm,{placeholder:"Search Twitter"}),w(Um,{})]}),w(Nm,{children:B(Wm,{children:[w(ur,{title:"Talvez voc\xEA curta",elements:[w(fl,{name:"Mount",nickname:"@moount"}),w(fl,{name:"Paulista",nickname:"@paulistafps1"}),w(fl,{name:"Zugor",nickname:"@zugorow"})]}),w(ur,{title:"Talvez voc\xEA curta",elements:[w(he,{}),w(he,{}),w(he,{}),w(he,{}),w(he,{})]}),w(ur,{title:"Talvez voc\xEA curta",elements:[w(he,{}),w(he,{}),w(he,{}),w(he,{}),w(he,{})]}),w(ur,{title:"Talvez voc\xEA curta",elements:[w(he,{}),w(he,{}),w(he,{}),w(he,{}),w(he,{})]}),w(ur,{title:"Talvez voc\xEA curta",elements:[w(he,{}),w(he,{}),w(he,{}),w(he,{}),w(he,{})]})]})})]})}const Ym=N.div`
