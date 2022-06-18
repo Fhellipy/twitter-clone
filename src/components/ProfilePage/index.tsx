@@ -1,6 +1,6 @@
 import Logo from '../../assets/Logo.jpg';
 
-import { Feed } from '../Feed';
+import { MyFeedProfile } from '../MyFeedProfile';
 
 import {
   Container,
@@ -55,7 +55,7 @@ function ProfilePage() {
         </Followage>
       </ProfileData>
 
-      <Feed />
+      <MyFeedProfile />
     </Container>
   );
 }

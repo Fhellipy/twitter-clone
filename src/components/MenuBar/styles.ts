@@ -54,67 +54,74 @@ export const Logo = styled(LogoTwitter)`
 `;
 
 export const MenuButton = styled.button`
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-
-  > span {
-    display: none;
-  }
-
-  @media (min-width: 1280px) {
-    > span {
-      display: inline;
-      margin-left: 19px;
-
-      font-weight: bold;
-      font-size: 19px;
-    }
-
-    padding-right: 15px;
-  }
-
-  padding: 9px 5px;
-  outline: 0;
-  background: transparent;
-
-  & + button {
-    margin-top: 16.5px;
-  }
-
-  & + button:last-child {
-    margin-top: 33px;
-
-    width: 40px;
-    height: 40px;
+  &, a {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 
     > span {
       display: none;
     }
 
-    @media (min-width: 1280px) {
-      width: 100%;
-      height: unset;
+    a > span {
+      display: none;
+    }
 
+    @media (min-width: 1280px) {
       > span {
         display: inline;
+        margin-left: 19px;
+
+        font-weight: bold;
+        font-size: 19px;
+      }
+      text-decoration: none;
+
+      padding-right: 15px;
+    }
+
+    padding: 9px 5px;
+    outline: 0;
+    background: transparent;
+
+    & + button {
+      margin-top: 16.5px;
+    }
+
+    & + button:last-child {
+      margin-top: 33px;
+
+      width: 40px;
+      height: 40px;
+
+      > span {
+        display: none;
+      }
+
+      @media (min-width: 1280px) {
+        width: 100%;
+        height: unset;
+
+        > span {
+          display: inline;
+        }
       }
     }
-  }
 
-  cursor: pointer;
-  border-radius: 25px;
+    cursor: pointer;
+    border-radius: 25px;
 
-  &:hover {
-    background: var(--twitter-dark-hover);
-  }
+    &:hover {
+      background: var(--twitter-dark-hover);
+    }
 
-  &:hover,
-  &.active {
-    span,
-    svg {
-      color: var(--twitter);
-      fill: var(--twitter);
+    &:hover,
+    &.active {
+      span,
+      svg {
+        color: var(--twitter);
+        fill: var(--twitter);
+      }
     }
   }
 `;
@@ -146,7 +153,6 @@ export const HashIcon = styled(Hash)`
     display: none;
   }
 `;
-
 
 export const BellIcon = styled(Notifications)`
   ${iconCSS}

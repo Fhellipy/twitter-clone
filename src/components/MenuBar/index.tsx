@@ -26,8 +26,10 @@ function MenuBar() {
         <Logo />
 
         <MenuButton>
-          <HomeIcon />
-          <span>Home Page</span>
+          <a href="/">
+            <HomeIcon />
+            <span>Home</span>
+          </a>
         </MenuButton>
 
         <MenuButton>
@@ -52,8 +54,10 @@ function MenuBar() {
         </MenuButton>
 
         <MenuButton className="active">
-          <ProfileIcon />
-          <span>Perfil</span>
+          <a href="perfil">
+            <ProfileIcon />
+            <span>Perfil</span>
+          </a>
         </MenuButton>
 
         <Button>

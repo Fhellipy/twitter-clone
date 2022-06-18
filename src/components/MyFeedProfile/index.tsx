@@ -4,7 +4,7 @@ import { Tweet } from '../Tweet';
 
 import { Container, Tab, Tweets } from './styles';
 
-function Feed() {
+function MyFeedProfile() {
   return (
     <Container>
       <Tab>
@@ -25,4 +25,4 @@ function Feed() {
   );
 }
 
-export { Feed };
+export { MyFeedProfile };

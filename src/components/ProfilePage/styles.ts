@@ -124,7 +124,7 @@ export const Followage = styled.div`
 export const EditButton = styled(Button)`
   position: absolute;
   top: 2vw;
-  right: 7px;
+  right: 15px;
 
   padding: 4px 16px;
   font-size: 16px;

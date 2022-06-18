@@ -6,35 +6,17 @@ export const Container = styled.div`
 `;
 
 export const Tab = styled.div`
-  /* margin-top: 10px;
-  padding: 11px 0 15px;
-  text-align: center;
-
-  font-weight: bold;
-  font-size: 15px;
-
-  outline: 0;
-  cursor: pointer;
-
-  color: var(--twitter);
-  border-bottom: 2px solid var(--twitter);
-
-  &:hover {
-    background: var(--twitter-dark-hover);
-  } */
-
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
   margin-top: 10px;
   padding: 11px 30px 15px;
 
-  border-bottom: 2px solid var(--twitter);
+  border-bottom: 1px solid var(--outline);
   outline: 0;
 
   > span {
-    font-weight: bold;
-    font-size: 15px;
+    font-size: 16px;
 
     cursor: pointer;
 
