@@ -1,61 +1,79 @@
-import Logo from '../../assets/Logo.jpg';
-
-import { MyFeedProfile } from '../MyFeedProfile';
-
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { InterfacePost } from '../../common/interfaces/InterfacePost';
+import { InterfaceUser } from '../../common/interfaces/InterfaceUser';
+import { Post } from '../Post';
 import {
   Container,
   Banner,
-  Avatar,
-  ProfileData,
-  LocationIcon,
-  CakeIcon,
-  Followage,
-  EditButton,
+  Wrapper,
+  AnchorIcon,
+  ImageUser,
+  Tab,
+  PostList,
 } from './styles';
 
 function ProfilePage() {
+  const [posts, setPosts] = useState<InterfacePost[]>([]);
+  const [user, setUser] = useState<InterfaceUser>();
+
+  const { userId } = useParams();
+
+  async function getPosts() {
+    const response = await fetch(
+      'https://jsonplaceholder.typicode.com/posts?userId=' + userId
+    );
+
+    setPosts(await response.json());
+  }
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  const urlImageUser =
+    'https://avatars.dicebear.com/api/open-peeps/' + userId + '.svg';
+
+  async function getInfoUser() {
+    const response = await fetch(
+      'https://jsonplaceholder.typicode.com/users/' + userId
+    );
+
+    setUser(await response.json());
+  }
+
+  useEffect(() => {
+    getInfoUser();
+  }, []);
+
   return (
     <Container>
       <Banner>
-        <Avatar>
-          <img src={Logo} alt="" />
-        </Avatar>
+        <Wrapper>
+          <AnchorIcon />
+          <span>{user?.name}</span>
+        </Wrapper>
+        <ImageUser>
+          <img
+            src={
+              'https://avatars.dicebear.com/api/open-peeps/' + userId + '.svg'
+            }
+            alt="Imagem do usuário"
+          />
+        </ImageUser>
+        <Tab>
+          <span>E-mail: {user?.email}</span>
+          <span>Fone: {user?.phone}</span>
+        </Tab>
       </Banner>
 
-      <ProfileData>
-        <EditButton outlined>Editar perfil</EditButton>
-
-        <h1>Fhellipy Conceição</h1>
-        <h2>@_Fhellipy</h2>
-
-        <p>Developer Web</p>
-
-        <p>
-          Instagram: <a href="https://instagram.com/_fhellipy">@_fhellipy</a>
-        </p>
-        <ul>
-          <li>
-            <LocationIcon />
-            Bahia, Basil
-          </li>
-
-          <li>
-            <CakeIcon />
-            Nascido(a) em 03 de Maio de 2003
-          </li>
-        </ul>
-
-        <Followage>
-          <span>
-            seguindo <strong>121</strong>
-          </span>
-          <span>
-            <strong>215 </strong> seguidores
-          </span>
-        </Followage>
-      </ProfileData>
-
-      <MyFeedProfile />
+      {posts.map((post) => {
+        return (
+          <PostList>
+            <Post {...post} />;
+          </PostList>
+        );
+      })}
     </Container>
   );
 }

@@ -1,21 +1,13 @@
+import { NavItem } from '../NavItem';
 import { HomePage } from '../HomePage';
-import { BottomMenu } from '../BottomMenu';
 
-import { Container, Header, StarIcon } from './styles';
+import { Container } from './styles';
 
 function HomeMain() {
   return (
     <Container>
-      <Header>
-        <div>
-          <span>Home</span>
-          <StarIcon />
-        </div>
-      </Header>
-
+      <NavItem />
       <HomePage />
-
-      <BottomMenu />
     </Container>
   );
 }

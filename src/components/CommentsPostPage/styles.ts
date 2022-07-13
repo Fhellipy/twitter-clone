@@ -6,55 +6,36 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  > a {
-    text-decoration: none;
-  }
 `;
 
 export const Banner = styled.div`
   width: 100%;
+  max-height: 330px;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
-
-  > img {
-    background: var(--black);
-    width: 100%;
-    height: 194px;
-
-    position: relative;
-  }
-
-  > span {
-    z-index: 1;
-    position: absolute;
-
-    top: 150px;
-
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--white);
-  }
 `;
 
 export const Tab = styled.div`
   width: 100%;
-  height: 50px;
+  height: 60px;
 
   display: flex;
+  justify-content: center;
   align-items: center;
 
   background: var(--on-primary);
-  padding-left: 20px;
+  padding: 5px;
 
   > span {
     color: var(--primary);
     font-size: 20px;
     font-weight: 700;
 
-    margin-left: 10px;
+    margin: 0 10px;
+
+    text-align: center;
 
     text-transform: uppercase;
   }
@@ -70,6 +51,9 @@ export const AnchorIcon = styled(FiAnchor)`
 export const PostList = styled.div`
   width: 100%;
   max-height: 100%;
+`;
 
-  border-bottom: 20px solid var(--background);
+export const PostComments = styled.div`
+  width: 100%;
+  max-height: 100%;
 `;

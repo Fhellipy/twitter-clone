@@ -1,60 +1,43 @@
-import Logo from '../../assets/Logo.jpg';
-
-import { FeedHome } from '../FeedHome';
-
-import {
-  Container,
-  Wrapper,
-  Avatar,
-  NewTweet,
-  HomeData,
-  ImageIcon,
-  GitIcon,
-  EmoteSmileIcon,
-  CalendarIcon,
-  LocationIcon,
-  EditButton,
-} from './styles';
+import { useEffect, useState } from 'react';
+import { InterfacePost } from '../../common/interfaces/InterfacePost';
+import { Post } from '../Post';
+import { Container, Banner, Tab, AnchorIcon, PostList } from './styles';
 
 function HomePage() {
+  const [posts, setPosts] = useState<InterfacePost[]>([]);
+
+  async function getPosts() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+
+    setPosts(await response.json());
+  }
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   return (
     <Container>
-      <Wrapper>
-        <a href="perfil">
-          <Avatar>
-            <img src={Logo} alt="" />
-          </Avatar>
-        </a>
+      <Banner>
+        <img
+          src="https://ichef.bbci.co.uk/news/640/cpsprodpb/A1A8/production/_109348314_gettyimages-923623146.jpg"
+          alt="Imagem de várias árvores"
+        />
+        <span>Texto ilustrativo</span>
+      </Banner>
 
-        <NewTweet placeholder="What's happening?" />
-      </Wrapper>
+      <Tab>
+        <AnchorIcon />
+        <span>Posts Recentes</span>
+      </Tab>
 
-      <HomeData>
-        <ul>
-          <li>
-            <ImageIcon />
-          </li>
-
-          <li>
-            <GitIcon />
-          </li>
-
-          <li>
-            <EmoteSmileIcon />
-          </li>
-
-          <li>
-            <CalendarIcon />
-          </li>
-
-          <li>
-            <LocationIcon />
-          </li>
-        </ul>
-        <EditButton>Tweet</EditButton>
-      </HomeData>
-
-      <FeedHome />
+      {posts.map((post) => {
+        return (
+          <PostList>
+            <Post {...post} />
+          </PostList>
+        );
+      })}
     </Container>
   );
 }

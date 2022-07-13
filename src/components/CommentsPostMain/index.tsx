@@ -1,15 +1,15 @@
+import { CommentsPostPage } from '../CommentsPostPage';
 import { NavItem } from '../NavItem';
-import { ProfilePage } from '../ProfilePage';
 
 import { Container } from './styles';
 
-function ProfileMain() {
+function CommentsPostMain() {
   return (
     <Container>
       <NavItem />
-      <ProfilePage />
+      <CommentsPostPage />
     </Container>
   );
 }
 
-export { ProfileMain };
+export { CommentsPostMain };

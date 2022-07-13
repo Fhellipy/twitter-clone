@@ -1,137 +1,95 @@
-import styled, { css } from 'styled-components';
-import { LocationOn, Cake } from '../../styles/Icons';
-import Button from '../Button';
+import styled from 'styled-components';
+import { FiAnchor } from '../../styles/Icons';
 
 export const Container = styled.div`
+  width: 100vw;
+
   display: flex;
   flex-direction: column;
-
-  max-height: 100%;
-  overflow-y: auto;
-
-  scrollbar-width: none;
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 export const Banner = styled.div`
-  flex-shrink: 0;
-
   width: 100%;
-  height: min(33vw, 199px);
-
-  background: var(--twitter);
-
-  position: relative;
-`;
-
-export const Avatar = styled.div`
-  > img {
-    width: max(45px, min(135px, 22vw));
-    height: max(45px, min(135px, 22vw));
-
-    border: 3.75px solid var(--primary);
-    background: var(--gray);
-    border-radius: 50%;
-
-    position: absolute;
-
-    bottom: max(-60px, -10vw);
-    left: 15px;
-  }
-`;
-
-export const ProfileData = styled.div`
-  padding: min(calc(10vw + 7px), 67px) 16px 0;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
-
-  position: relative;
-
-  > h1 {
-    font-weight: bold;
-    font-size: 19px;
-  }
-
-  > h2 {
-    font-weight: normal;
-    font-size: 15px;
-
-    color: var(--gray);
-  }
-
-  > p {
-    font-size: 15px;
-    margin-top: 11px;
-
-    > a {
-      text-decoration: none;
-      color: var(--twitter);
-    }
-  }
-
-  > ul {
-    list-style: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    > li {
-      display: flex;
-      align-items: center;
-
-      font-size: 15px;
-      color: var(--gray);
-      margin-bottom: 3px;
-
-      > svg {
-        fill: var(--gray);
-        margin-right: 5px;
-      }
-    }
-  }
+  justify-content: center;
 `;
 
-const iconCss = css`
-  width: 20px;
-  height: 20px;
-
-  color: var(--gray);
-`;
-
-export const LocationIcon = styled(LocationOn)`
-  ${iconCss}
-`;
-
-export const CakeIcon = styled(Cake)`
-  ${iconCss}
-`;
-
-export const Followage = styled.div`
+export const Wrapper = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
 
   > span {
-    font-size: 15px;
-    color: var(--gray);
+    margin-left: 10px;
 
-    & + span {
-      margin-left: 20px;
-    }
+    color: var(--primary);
+
+    font-size: 20px;
+    font-weight: bold;
+
+    text-transform: uppercase;
   }
 `;
 
-export const EditButton = styled(Button)`
-  position: absolute;
-  top: 2vw;
-  right: 15px;
+export const ImageUser = styled.div`
+  width: 100%;
 
-  padding: 4px 16px;
-  font-size: 16px;
+  padding: 0 48%;
 
-  @media (min-width: 320px) {
-    top: 10px;
-    padding: 10px 19px;
-    font-size: 15px;
+  @media (max-width: 700px) {
+    padding: 0 46%;
   }
+
+  @media (max-width: 500px) {
+    padding: 0 44%;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0 40%;
+  }
+
+  margin-bottom: 10px;
+  > img {
+    width: 90px;
+    height: 90px;
+
+    border: 2.75px solid var(--primary);
+    background: var(--background);
+    border-radius: 50%;
+  }
+`;
+
+export const Tab = styled.div`
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: var(--on-primary);
+  padding: 5px;
+
+  > span {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 700;
+
+    text-align: justify;
+  }
+`;
+
+export const AnchorIcon = styled(FiAnchor)`
+  width: 28px;
+  height: 28px;
+
+  stroke: var(--primary);
+`;
+
+export const PostList = styled.div`
+  width: 100%;
 `;

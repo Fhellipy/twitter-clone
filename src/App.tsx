@@ -1,8 +1,9 @@
-import { useState } from 'react';
 import GlobalStyles from './styles/GlobalStyles';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { LayoutHome } from './layout/LayoutHome';
-import { LayoutProfile } from './layout/LayoutProfile';
+import { LayoutProfileUser } from './layout/LayoutProfileUser';
+import { LayoutCommentsPost } from './layout/LayoutCommentsPost';
+import { LayoutCatGenerator } from './layout/LayoutCatGenerator';
 
 function App() {
   return (
@@ -11,10 +12,17 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/twitter-clone/">
+          <Route path="/">
             <Route index element={<LayoutHome />} />
 
-            <Route path="perfil" element={<LayoutProfile />} />
+            <Route path="user/:userId" element={<LayoutProfileUser />} />
+
+            <Route
+              path="user/:userId/comments/:postId"
+              element={<LayoutCommentsPost />}
+            />
+
+            <Route path="/cat_generator" element={<LayoutCatGenerator />} />
           </Route>
         </Routes>
       </BrowserRouter>

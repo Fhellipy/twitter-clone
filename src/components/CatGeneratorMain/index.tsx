@@ -1,15 +1,15 @@
+import { CatGeneratorPage } from '../CatGeneratorPage';
 import { NavItem } from '../NavItem';
-import { ProfilePage } from '../ProfilePage';
 
 import { Container } from './styles';
 
-function ProfileMain() {
+function CatGeneratorMain() {
   return (
     <Container>
       <NavItem />
-      <ProfilePage />
+      <CatGeneratorPage />
     </Container>
   );
 }
 
-export { ProfileMain };
+export { CatGeneratorMain };
