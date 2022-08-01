@@ -37,6 +37,7 @@ function CatGeneratorPage() {
         </Wrapper>
         <ImageCat>
           <img
+            data-cy="cat-image"
             src={`${urlApi}/${catUrl}`}
             alt="Imagem de um gato gerado aleatóriamente"
           />
@@ -44,7 +45,10 @@ function CatGeneratorPage() {
       </Banner>
 
       <WrapperButton>
-        <ButtonNewCat onClick={() => setReloadCounter((value) => value + 1)}>
+        <ButtonNewCat
+          data-cy="button-generator-cat"
+          onClick={() => setReloadCounter((value) => value + 1)}
+        >
           Buscar novo gatinho
         </ButtonNewCat>
         <span> Já geramos {reloadCounter} gatinhos hoje </span>

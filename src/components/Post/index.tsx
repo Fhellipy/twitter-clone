@@ -25,14 +25,14 @@ function Post({ body, userId, id }: InterfacePost) {
     <Container>
       <a href={'/user/' + userId}>
         <Avatar>
-          <img src={urlImageUser} alt="Usuário" />
+          <img data-cy="user-picture" src={urlImageUser} alt="Usuário" />
         </Avatar>
       </a>
 
       <Wrapper>
         <UserName>{users?.name}</UserName>
         <a href={'/user/'+userId+'/comments/'+ id}>
-          <ContentPost>{body}</ContentPost>
+          <ContentPost data-cy="comment-post">{body}</ContentPost>
         </a>
       </Wrapper>
     </Container>

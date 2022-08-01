@@ -4,6 +4,7 @@ import { LayoutHome } from './layout/LayoutHome';
 import { LayoutProfileUser } from './layout/LayoutProfileUser';
 import { LayoutCommentsPost } from './layout/LayoutCommentsPost';
 import { LayoutCatGenerator } from './layout/LayoutCatGenerator';
+import { LayoutLogin } from './layout/LayoutLogin';
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route index element={<LayoutHome />} />
+          
+            <Route index element={<LayoutLogin />} />
+            <Route path="home" element={<LayoutHome />} />
 
             <Route path="user/:userId" element={<LayoutProfileUser />} />
 

@@ -4,11 +4,11 @@ function NavItem() {
   return (
     <Container>
       <a href="/">
-        <button>Home</button>
+        <button data-cy="button-home">Home</button>
       </a>
 
       <a href="/cat_generator">
-        <button>CatGenerator</button>
+        <button data-cy="cat-generator">CatGenerator</button>
       </a>
      </Container>
   );

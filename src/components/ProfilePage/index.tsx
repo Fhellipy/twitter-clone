@@ -48,7 +48,7 @@ function ProfilePage() {
 
   return (
     <Container>
-      <Banner>
+      <Banner data-cy="user-banner">
         <Wrapper>
           <AnchorIcon />
           <span>{user?.name}</span>

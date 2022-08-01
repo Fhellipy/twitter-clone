@@ -15,7 +15,7 @@ function Comments({ body, name, email }: InterfaceComments) {
         <UserEmail>{email}</UserEmail>
         <UserName>{name}</UserName>
 
-        <ContentComments>{body}</ContentComments>
+        <ContentComments data-cy="info-comment">{body}</ContentComments>
       </Wrapper>
     </Container>
   );
